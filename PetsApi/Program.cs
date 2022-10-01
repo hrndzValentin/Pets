@@ -1,15 +1,24 @@
+using Domain.Entities.Models;
 using Microsoft.EntityFrameworkCore;
 using PetsApi.Repositories;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddRouting(routing => routing.LowercaseUrls = true);
+
+builder.Services.AddDbContext<VeterinariaContext>(options => {
+    options.UseSqlServer(builder.Configuration.GetConnectionString("LocalSQLServer"));
+   //options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+});
+
+
 
 
 var app = builder.Build();

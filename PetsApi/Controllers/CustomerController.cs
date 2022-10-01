@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PetsApi.Dtos;
+using PetsApi.Repositories;
 
 namespace PetsApi.Controllers
 {
@@ -8,6 +9,14 @@ namespace PetsApi.Controllers
     [Route("api/[controller]")]
     public class CustomerController : Controller
     {
+
+        private readonly Persona _Persona;
+
+        public CustomerController(Persona persona)
+        {
+            _Persona = persona;
+        }
+
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CustomerDto))]
         public async Task<IActionResult> GetCustomer(long id)

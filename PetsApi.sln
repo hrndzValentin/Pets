@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetsApi", "PetsApi\PetsApi.csproj", "{6ACC798A-F530-422F-867E-438695CE5E52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetsApi", "PetsApi\PetsApi.csproj", "{6ACC798A-F530-422F-867E-438695CE5E52}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{F2988048-8723-40BB-98F0-57023C8DB7E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{4603F7DC-2B8F-49F6-AE1F-659E9908B141}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Entities", "Domain.Entities\Domain.Entities.csproj", "{1C63FD09-9AA3-488F-B3DC-7AA027C23328}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +21,17 @@ Global
 		{6ACC798A-F530-422F-867E-438695CE5E52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ACC798A-F530-422F-867E-438695CE5E52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6ACC798A-F530-422F-867E-438695CE5E52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C63FD09-9AA3-488F-B3DC-7AA027C23328}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C63FD09-9AA3-488F-B3DC-7AA027C23328}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C63FD09-9AA3-488F-B3DC-7AA027C23328}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C63FD09-9AA3-488F-B3DC-7AA027C23328}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6ACC798A-F530-422F-867E-438695CE5E52} = {4603F7DC-2B8F-49F6-AE1F-659E9908B141}
+		{1C63FD09-9AA3-488F-B3DC-7AA027C23328} = {F2988048-8723-40BB-98F0-57023C8DB7E9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2083607A-94F9-4DBD-85E8-D1B4B2062DE9}

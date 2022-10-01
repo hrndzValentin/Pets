@@ -2,6 +2,8 @@ using Domain.Entities.Models;
 using Microsoft.EntityFrameworkCore;
 using PetsApi.Repositories;
 using Microsoft.Extensions.Configuration;
+using Domain.Interface;
+using Domain.Core;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +19,8 @@ builder.Services.AddDbContext<VeterinariaContext>(options => {
     options.UseSqlServer(builder.Configuration.GetConnectionString("LocalSQLServer"));
    //options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 });
+
+builder.Services.AddScoped<IPersonaDomain, PersonaDomain>();
 
 
 

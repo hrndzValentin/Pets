@@ -37,5 +37,16 @@ namespace Domain.Core
             return response;
         }
 
+        public Response<bool> InsertarPersona(Persona persona)
+        {
+            Response<bool> response = new Response<bool>();
+            _context.Personas.Add(persona);
+            _context.SaveChanges();
+
+            response.id = persona.Id;
+
+            return response;
+        }
+
     }
 }

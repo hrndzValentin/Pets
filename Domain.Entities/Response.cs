@@ -10,6 +10,7 @@ namespace Domain.Core
     {
         public T Data { get; set; }
 
+        public int id { get; set; }
         public bool IsSuccess { get; set; }
 
         public bool IsError { get; set; }

@@ -11,5 +11,7 @@ namespace Domain.Interface
     public interface IPersonaDomain
     {
         Response<Persona> ObtenerPersona(int id);
+
+        public Response<bool> InsertarPersona(Persona persona);
     }
 }

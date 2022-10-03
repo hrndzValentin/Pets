@@ -1,4 +1,5 @@
-﻿using Domain.Interface;
+﻿using Domain.Entities.Models;
+using Domain.Interface;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,6 +25,21 @@ namespace PetsApi.Controllers
         public IActionResult ObtenerAlumnoPorId(int id) 
         {
             var response = _personaDomain.ObtenerPersona(id);
+
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
+            else
+            {
+                return BadRequest(response);
+            }
+          }
+
+        [HttpPost]
+        public IActionResult InsertarPersona(Persona persona)
+        {
+            var response = _personaDomain.InsertarPersona(persona);
 
             if (response.IsSuccess)
             {
